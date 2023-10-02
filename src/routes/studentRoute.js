@@ -6,19 +6,32 @@ const Student = require("../model/Student");
 const student = express.Router();
 
 student.get("/", async (req, res) => {
-  res.render("index", { title: "My Express App" });
+  res.render("index");
 });
 
 student.get("/form", async (req, res) => {
-  res.render("form", { title: "My Express App" });
+  res.render("form");
 });
 
 student.get("/generate", async (req, res) => {
-  res.render("generate", { title: "My Express App" });
+  res.render("generate");
 });
 
 student.get("/information", async (req, res) => {
   res.render("success");
+});
+
+student.get("/record/:reference", async (req, res) => {
+  try{ 
+    const student = await Student.findByReference(req.params.reference);
+    if(student) {
+      res.status(302).json(student);
+    }else{
+      res.status(404).json({message: "Oops! no student record found!"});
+    }
+  }catch(e){
+    res.status(500).json({message: e.message});
+  }
 });
 
 student.post("/register", async (req, res) => {
@@ -28,7 +41,7 @@ student.post("/register", async (req, res) => {
       if (req.body !== null && req.body !== undefined) {
         if (req.body.expiry_date > req.body.issued_date) {
           Student.createStudent(req);
-          res.render("success", {
+          res.render("generate", {
             alert: "Thank you!",
             message: "Record captured successfully!",
           });
@@ -61,7 +74,7 @@ student.post("/register", async (req, res) => {
 student.post("/code", async (req, res) => {
   try {
     const qrCodeData = {
-      name: req.body.reference,
+      reference: req.body.reference,
     };
     const qrCodeDataString = JSON.stringify(qrCodeData);
     const qrCodeDataURL = await QRCode.toDataURL(qrCodeDataString);
