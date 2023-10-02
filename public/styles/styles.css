@@ -74,6 +74,7 @@ h1{
 .action-btn{
     background: transparent;
     color: white;
+    font-size: 18px;
     font-weight: 500px;
     border: 2px solid white;
     margin-right: 20px;
@@ -82,6 +83,7 @@ h1{
 .action-ghost-btn{
     background: transparent;
     color: white;
+    font-size: 18px;
     font-weight: 500px;
     border: 2px solid white;
 }
