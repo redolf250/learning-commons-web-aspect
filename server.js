@@ -16,6 +16,7 @@ mongoose.connect(process.env.DB_URL_PRODUCTION || process.env.DB_URL_DEVELOPMENT
 const app = express();
 app.set('views', path.join(__dirname, 'src','views'));
 app.use(fileUpload());
+app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static(constructPath('public'))); 
 app.use(express.urlencoded({ extended: true }));
