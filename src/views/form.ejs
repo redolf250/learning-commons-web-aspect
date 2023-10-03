@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate registration details</title>
+    <link rel="stylesheet" href="/styles/form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>Registration</header>
+      <form
+        action="/student/register"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-first">
+          <div class="details personal">
+            <span class="title">Student details</span>
+            <div class="fields">
+              <div class="input-field">
+                <label>Firstname</label>
+                <input
+                  type="text"
+                  placeholder="Firstname"
+                  required
+                  name="firstname"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Othername</label>
+                <input type="text" placeholder="othername" name="othername" />
+              </div>
+
+              <div class="input-field">
+                <label>Lastname</label>
+                <input
+                  type="text"
+                  placeholder="Lastname"
+                  required
+                  name="lastname"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Index</label>
+                <input type="text" placeholder="Index" required name="index" />
+              </div>
+
+              <div class="input-field">
+                <label>Reference</label>
+                <input
+                  type="text"
+                  placeholder="Reference"
+                  required
+                  name="reference"
+                />
+              </div>
+              <div class="input-field">
+                <label>Nationality</label>
+                <input
+                  type="text"
+                  placeholder="Nationality"
+                  required
+                  name="nationality"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>College</label>
+                <select name="college" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="CoS">CoS</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Faculty</label>
+                <select name="faculty" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="FoB">FoB</option>
+                  <option value="FoPSC">FoPSC</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Department</label>
+                <select name="department" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="Dept. of Physics">Dept. of Physics</option>
+                  <option value="Dept. of Chemistry">Dept. of Chemistry</option>
+                  <option value="Dept. of Mathematics">
+                    Dept. of Mathematics
+                  </option>
+                  <option value="Dept. of Computer Science">
+                    Dept. of Computer Science
+                  </option>
+                  <option value="Dept. of Environmental Science">
+                    Dept. of Environmental Science
+                  </option>
+                  <option value="Dept. of Food Science and Technology">
+                    Dept. of Food Science and Technology
+                  </option>
+                  <option value="Dept. of Optometry and Visual Science">
+                    Dept. of Optometry and Visual Science
+                  </option>
+                  <option value="Dept. of Optometry and Visual Science">
+                    Dept. of Optometry and Visual Science
+                  </option>
+                  <option value="Dept. of Meteorology and Climate Science">
+                    Dept. of Meteorology and Climate Science
+                  </option>
+                  <option value="Dept. of Theoretical and Applied Biology">
+                    Dept. of Theoretical and Applied Biology
+                  </option>
+                  <option value="Dept. of Statistics and Actuarial Science">
+                    Dept. of Statistics and Actuarial Science
+                  </option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Category</label>
+                <select name="category" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="Postgraduate">Postgraduate</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Gender</label>
+                <select name="gender" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Disabled</label>
+                <select name="disabled" id="faults" required>
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Issued date</label>
+                <input
+                  type="date"
+                  placeholder="Issued date"
+                  required
+                  name="issued_date"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Expiry date</label>
+                <input
+                  type="date"
+                  placeholder="Expiry date"
+                  required
+                  name="expiry_date"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Image</label>
+                <input
+                  type="file"
+                  placeholder="Image"
+                  name="image"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label></label>
+                <div class="button">
+                  <input type="submit" value="Submit Details" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
